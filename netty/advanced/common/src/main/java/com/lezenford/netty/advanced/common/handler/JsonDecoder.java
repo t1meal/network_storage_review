@@ -9,13 +9,13 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 
 import java.util.List;
 
-public class JsonDecoder extends MessageToMessageDecoder<ByteBuf> {
+public class JsonDecoder extends MessageToMessageDecoder<String> {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     @Override
-    protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
-        final byte[] bytes = ByteBufUtil.getBytes(msg);
-        Message message = OBJECT_MAPPER.readValue(bytes, Message.class);
+    protected void decode(ChannelHandlerContext ctx, String msg, List<Object> out) throws Exception {
+        System.out.println("incoming message: " + msg);
+        Message message = OBJECT_MAPPER.readValue(msg, Message.class);
         out.add(message);
     }
 }

@@ -1,5 +1,6 @@
 package com.lezenford.netty.advanced.server;
 
+import com.lezenford.netty.advanced.common.message.AuthMessage;
 import com.lezenford.netty.advanced.common.message.DateMessage;
 import com.lezenford.netty.advanced.common.message.Message;
 import com.lezenford.netty.advanced.common.message.TextMessage;
@@ -27,6 +28,19 @@ public class FirstServerHandler extends SimpleChannelInboundHandler<Message> {
             DateMessage message = (DateMessage) msg;
             System.out.println("incoming date message: " + message.getDate());
             ctx.writeAndFlush(msg);
+        }
+        if (msg instanceof AuthMessage){
+            AuthMessage message = (AuthMessage) msg;
+            String clientLogin = message.getLogin();
+            String clientPassword = message.getPassword();
+            if (message.toString().contains(clientLogin) && message.toString().contains(clientPassword)){
+                System.out.println("incoming authorization successful!");
+                ctx.writeAndFlush("true");
+            }else{
+                System.out.println("incoming authorization unsuccessful!");
+                ctx.writeAndFlush("false");
+            }
+
         }
     }
 
