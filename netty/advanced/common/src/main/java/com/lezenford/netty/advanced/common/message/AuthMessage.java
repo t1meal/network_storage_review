@@ -18,5 +18,4 @@ public class AuthMessage extends Message{
         return password;
     }
 
-
 }

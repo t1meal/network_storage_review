@@ -9,5 +9,4 @@ import java.io.Serializable;
         property = "type"
 )
 public abstract class Message {
-
 }
