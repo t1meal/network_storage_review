@@ -10,4 +10,5 @@ public class FileRequestMessage extends Message {
     public void setPath(String path) {
         this.path = path;
     }
+
 }

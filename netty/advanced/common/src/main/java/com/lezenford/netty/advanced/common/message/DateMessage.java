@@ -19,4 +19,5 @@ public class DateMessage extends Message {
                 "date=" + date +
                 '}';
     }
+
 }

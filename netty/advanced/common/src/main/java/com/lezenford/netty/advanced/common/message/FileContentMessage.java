@@ -29,4 +29,5 @@ public class FileContentMessage extends Message{
     public void setContent(byte[] content) {
         this.content = content;
     }
+
 }

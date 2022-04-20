@@ -19,6 +19,7 @@ public class Server {
 
     public static void main(String[] args) throws InterruptedException {
         new Server(9000).start();
+
     }
 
     public Server(int port) {
