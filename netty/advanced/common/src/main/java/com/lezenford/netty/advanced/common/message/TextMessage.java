@@ -17,5 +17,4 @@ public class TextMessage extends Message {
                 "text='" + text + '\'' +
                 '}';
     }
-
 }

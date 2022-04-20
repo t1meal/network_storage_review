@@ -93,7 +93,6 @@ public class Client {
 //                Thread.sleep(3000);
 //            }
 
-
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();

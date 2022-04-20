@@ -9,7 +9,6 @@ import java.io.*;
 
 public class FirstServerHandler extends SimpleChannelInboundHandler<Message> {
     private int counter = 0;
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         System.out.println("New active channel");
